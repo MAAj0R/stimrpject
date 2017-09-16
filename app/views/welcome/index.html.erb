@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+
+<style> 
+
+.userr {
+
+	margin-left: 90%;
+}
+
+body {
+
+	background-image: url(http://i.imgur.com/BN9lXF9.jpg);
+}
+
+</style>
+<body>
+
+<h1>STEAMPOWERED </h1>
+<%= link_to image_tag("http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_noborder.png"), '/auth/steam' %>
+<% if session.key? :current_user %>
+
+<div class="userr" class="container">
+<p><%= session[:current_user]["username"] %></p>
+<p><%= image_tag session[:current_user]["image"] %></p>
+<p><%=  session[:current_user]["uid"] %></p>
+
+</div>
+
+<div class="registerr"> </div>
+
+<% end %>
+
+
+
+</body>
+</html> 
